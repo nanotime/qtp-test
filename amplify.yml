@@ -4,7 +4,7 @@ backend:
     build:
       commands:
         - npm install -g pnpm
-        - pnpm ci --cache .npm --prefer-offline
+        - pnpm install --frozen-lockfile --prefer-offline
         - pnpm ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
   phases:
